@@ -11,13 +11,17 @@ Gem::Specification.new do |s|
   s.email       = ["ol.birjukov@gmail.com"]
   s.homepage    = "https://gitlab.com/ror_g/confirm_strategy"
   s.summary     = "Strategy for omniauth."
-  s.description = "Strategy for omniauth with confirmation (sms confirm or other)."
+  s.description = "Strategy for omniauth with confirmation (sms confirm or other transport)."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.2.3"
+  s.add_dependency "rails", ">= 4.0.0"
+  s.add_dependency "omniauth"
+  s.add_dependency "redis"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
+
+  s.test_files = Dir["spec/**/*"]
 end
