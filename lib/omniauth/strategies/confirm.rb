@@ -15,13 +15,15 @@ module OmniAuth
       option :transport, OmniAuth::Confirm::Transport
       option :storage, OmniAuth::Confirm::Storage
 
+      uid { auth_subject }
+      info { {:nickname => auth_subject} }
+
       def request_phase
         login_form
       end
 
       def other_phase
         if on_confirm_path? && request.get?
-          auth_subject = request[auth_subject_name]
 
           return redirect_to_request_path unless validator.validate(auth_subject)
 
@@ -34,8 +36,7 @@ module OmniAuth
       end
 
       def callback_phase
-        code         = request[:confirm_code]
-        auth_subject = request[auth_subject_name]
+        code = request[:confirm_code]
 
         return fail!(:invalid_credentials) unless valid_code?(code, auth_subject)
 
@@ -98,6 +99,10 @@ module OmniAuth
 
       def auth_subject_name
         options[:auth_subject]
+      end
+
+      def auth_subject
+        auth_subject
       end
 
       def transport
