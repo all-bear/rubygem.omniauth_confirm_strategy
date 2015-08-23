@@ -5,11 +5,11 @@ require "confirm_strategy/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "confirm_strategy"
+  s.name        = "omniauth-confirm"
   s.version     = ConfirmStrategy::VERSION
   s.authors     = ["Oleh Birjukov"]
   s.email       = ["ol.birjukov@gmail.com"]
-  s.homepage    = "https://gitlab.com/ror_g/confirm_strategy"
+  s.homepage    = "https://gitlab.com/ror_g/omniauth_confirm_strategy"
   s.summary     = "Strategy for omniauth."
   s.description = "Strategy for omniauth with confirmation (sms confirm or other transport)."
   s.license     = "MIT"
