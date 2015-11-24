@@ -9,12 +9,12 @@ Gem::Specification.new do |s|
   s.version     = ConfirmStrategy::VERSION
   s.authors     = ["Oleh Birjukov"]
   s.email       = ["ol.birjukov@gmail.com"]
-  s.homepage    = "https://gitlab.com/ror_g/omniauth_confirm_strategy"
+  s.homepage    = "https://github.com/all-bear/rubygem.omniauth_confirm_strategy"
   s.summary     = "Strategy for omniauth."
   s.description = "Strategy for omniauth with confirmation (sms confirm or other transport)."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", ">= 4.0.0"
   s.add_dependency "omniauth"
